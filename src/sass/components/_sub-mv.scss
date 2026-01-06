@@ -1,0 +1,30 @@
+@use "global" as *;
+
+.sub-mv--relative {
+  position: relative;
+}
+
+.sub-mv__title {
+  position: absolute;
+  bottom: rem(20);
+  left: 0;
+  color: #FFFAFA;
+  font-family: var(--font-family-second);
+  font-size: rem(18);
+  font-weight: var(--font-weight-bold);
+  padding: rem(7) rem(17);
+  background-color: rgba(49, 46, 46, 0.62);
+  display: inline-block;
+  @include mq('md') {
+    font-size: rem(44);
+    padding: rem(14) rem(40);
+    bottom: rem(60);
+  }
+}
+
+.sub-mv__img {
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+}

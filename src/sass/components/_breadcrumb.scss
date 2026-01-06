@@ -1,0 +1,42 @@
+@use "global" as *;
+
+.breadcrumb {
+    padding: rem(5) rem(5);
+    @include mq('md') {
+      padding: rem(5) var(--padding-inner);
+    }
+}
+
+.breadcrumb__list {
+  display: flex;
+  gap: rem(4);
+  align-items: center;
+}
+
+.breadcrumb__item {
+font-size: rem(14);
+font-weight: var(--font-weight-regular);
+@include mq('md') {
+  font-size: rem(18);
+}
+}
+
+.breadcrumb__item::after {
+  content: '/';
+  margin-left: rem(4);
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+}
+
+.breadcrumb__item:last-child::after {
+  content: '';
+}
+
+.breadcrumb__link {
+  transition: opacity 0.3s ease-in-out;
+}
+
+.breadcrumb__link:hover {
+  opacity: 0.7;
+}

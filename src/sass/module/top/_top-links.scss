@@ -1,0 +1,102 @@
+@use "global" as *;
+
+.top-links {
+  margin-top: rem(100);
+  padding-bottom: rem(100);
+  @include mq('md') {
+    margin-top: rem(160);
+    padding-bottom: rem(180);
+  }
+}
+
+.top-links__inner {
+  margin-inline: auto;
+  max-width: 500px;
+  padding-inline: var(--padding-inner);
+  @include mq('md') {
+    --cq-ref-inner: 1200;
+    max-width: calc(1000px + var(--padding-inner) * 2);
+  }
+}
+
+.top-links__list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: rem(40);
+  @media (max-width: 767px) {
+  padding-inline: rem(20);
+  }
+  @include mq('md') {
+    grid-template-columns: repeat(3, 1fr);
+    gap: rem(28);
+  }
+}
+
+.top-links__link {
+  display: block;
+  @media (any-hover: hover) {
+    &:hover {
+      .top-links__img {
+        transform: scale(1.05);
+      }
+    }
+    &:hover .top-links__label {
+      background-color: var(--hover-color);
+      color: var(--white);
+      border-color: var(--hover-color);
+    }
+  }
+}
+
+.top-links__item.top-links__item--03 .top-links__img-wrap {
+  position: relative;
+  @include mq('md') {
+    &::after {
+      display: block;
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 40%;
+      height: 100%;
+      background: var(--white);
+      clip-path: ellipse(40% 53% at 113% 50%);
+    }
+  }
+}
+
+.top-links__img-wrap {
+  overflow: hidden;
+}
+
+.top-links__img {
+  height: auto;
+  object-fit: cover;
+  aspect-ratio: 312/267;
+  transition: transform var(--duration-base) ease;
+  will-change: transform;
+  @include mq('md') {
+    aspect-ratio: 312/313;
+  }
+}
+
+.top-links__label {
+  font-family: var(--font-family-second);
+  font-size: rem(16);
+  font-weight: var(--font-weight-bold);
+  border: 1px solid var(--black);
+  text-align: center;
+  padding: rem(6) rem(20);
+  transition: background-color var(--duration-base) ease, color var(--duration-base) ease, border-color var(--duration-base) ease;
+  @media (max-width: 767px) {
+  margin-inline: auto;
+  display: block;
+  max-width: rem(174);
+  margin-top: rem(16);
+  }
+  @include mq('md') {
+    font-size: rem(20);
+    margin-top: rem(26);
+    min-width: rem(174);
+  }
+}
