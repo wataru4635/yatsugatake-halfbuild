@@ -177,7 +177,7 @@ Template Name: トップページ
                   基礎や構造といった安全に関わり、専門的な知識が必要な部分は専門家に任せ、内装材や仕上げ材などは好みの材料を選べます。
                 </p>
                 <div class="top-service__card-action">
-                  <a class="top-service__card-link" href="#">使用する素材</a>
+                  <a class="top-service__card-link" href="<?php echo MATERIALS_URL; ?>">使用する木材</a>
                 </div>
               </div>
             </div>
@@ -204,7 +204,7 @@ Template Name: トップページ
                   ここや八ヶ岳南麓は県外からの移住者も多く人気な土地です。
                 </p>
                 <div class="top-service__card-action">
-                  <a class="top-service__card-link" href="#">八ヶ岳の魅力</a>
+                  <a class="top-service__card-link" href="<?php echo YATSUGATAKE_URL; ?>">八ヶ岳の魅力</a>
                 </div>
               </div>
             </div>
@@ -218,7 +218,7 @@ Template Name: トップページ
     <div class="top-support__inner">
       <div class="top-support__content top-support__content--first">
         <div class="top-support__media">
-          <div class="top-support__img-wrap js-scaleImg">
+          <div class="top-support__img-wrap js-scaleImg --delay-1">
             <img src="<?php echo IMAGEPATH; ?>/top/top-support.webp" alt="壁に塗装を施す男女のDIY作業風景" width="600" height="400" loading="lazy" class="top-support__img">
           </div>
           <p class="top-support__vertical-title js-fade-in">こんな人に支持されています</p>
@@ -235,7 +235,7 @@ Template Name: トップページ
 
       <div class="top-support__content top-support__content--second">
         <div class="top-support__media">
-          <div class="top-support__img-wrap js-scaleImg">
+          <div class="top-support__img-wrap js-scaleImg --delay-1">
             <img src="<?php echo IMAGEPATH; ?>/top/top-support.webp" alt="壁に塗装を施す男女のDIY作業風景" width="600" height="400" loading="lazy" class="top-support__img">
           </div>
           <p class="top-support__vertical-title js-fade-in"><span class="top-support__vertical-title-first">セルフビルドなら</span><br><span class="top-support__vertical-title-second">ログハウスがおすすめ</span></p>
@@ -259,28 +259,28 @@ Template Name: トップページ
 
       <ul class="top-works__list">
         <li class="top-works__item js-slide-left">
-          <a href="#" class="top-works__link">
+          <a href="<?php echo WORKS_URL; ?>" class="top-works__link">
             <div class="top-works__img-wrap">
               <img src="<?php echo IMAGEPATH; ?>/top/top-works01.webp" alt="モダンな外観の戸建て住宅の施工事例" width="300" height="200" loading="lazy" class="top-works__img">
             </div>
           </a>
         </li>
         <li class="top-works__item js-slide-left --delay-1">
-          <a href="#" class="top-works__link">
+          <a href="<?php echo WORKS_URL; ?>" class="top-works__link">
             <div class="top-works__img-wrap">
               <img src="<?php echo IMAGEPATH; ?>/top/top-works02.webp" alt="ナチュラルデザインの住宅外観の施工事例" width="300" height="200" loading="lazy" class="top-works__img">
             </div>
           </a>
         </li>
         <li class="top-works__item js-slide-left --delay-2">
-          <a href="#" class="top-works__link">
+          <a href="<?php echo WORKS_URL; ?>" class="top-works__link">
             <div class="top-works__img-wrap">
               <img src="<?php echo IMAGEPATH; ?>/top/top-works03.webp" alt="ガラス張りの現代的な住宅の施工事例" width="300" height="200" loading="lazy" class="top-works__img">
             </div>
           </a>
         </li>
         <li class="top-works__item js-slide-left --delay-3">
-          <a href="#" class="top-works__link">
+          <a href="<?php echo WORKS_URL; ?>" class="top-works__link">
             <div class="top-works__img-wrap">
               <img src="<?php echo IMAGEPATH; ?>/top/top-works04.webp" alt="建築現場で図面を確認する施工管理の様子" width="300" height="200" loading="lazy" class="top-works__img">
             </div>
@@ -289,7 +289,7 @@ Template Name: トップページ
       </ul>
 
       <div class="top-works__button-wrap">
-        <a href="#" class="top-works__btn btn-link">詳しく見る</a>
+        <a href="<?php echo WORKS_URL; ?>" class="top-works__btn btn-link">詳しく見る</a>
       </div>
     </div>
   </section>
@@ -301,28 +301,28 @@ Template Name: トップページ
       <div class="top-flow__grid js-fade-in">
         <ul class="top-flow__list top-flow__list--left">
           <li>
-            <a href="#" class="top-flow__item">
+            <a href="<?php echo FLOW_URL; ?>#consultation-planning" class="top-flow__item">
               <span class="top-flow__number">1</span>
               <p class="top-flow__text">相談とプランニング</p>
             </a>
           </li>
           <li class="top-flow__arrow"></li>
           <li>
-            <a href="#" class="top-flow__item">
+            <a href="<?php echo FLOW_URL; ?>#design-structure" class="top-flow__item">
               <span class="top-flow__number">2</span>
               <p class="top-flow__text">設計と構造構築</p>
             </a>
           </li>
           <li class="top-flow__arrow"></li>
           <li>
-            <a href="#" class="top-flow__item">
+            <a href="<?php echo FLOW_URL; ?>#foundation-work" class="top-flow__item">
               <span class="top-flow__number">3</span>
               <p class="top-flow__text">基礎工事</p>
             </a>
           </li>
           <li class="top-flow__arrow"></li>
           <li>
-            <a href="#" class="top-flow__item">
+            <a href="<?php echo FLOW_URL; ?>#material-preparation" class="top-flow__item">
               <span class="top-flow__number">4</span>
               <p class="top-flow__text">木材などの準備</p>
             </a>
@@ -331,27 +331,27 @@ Template Name: トップページ
         <span class="top-flow__arrow-center"></span>
         <ul class="top-flow__list top-flow__list--right">
           <li>
-            <a href="#" class="top-flow__item">
+            <a href="<?php echo FLOW_URL; ?>#framing" class="top-flow__item">
               <span class="top-flow__number">5</span>
               <p class="top-flow__text">上棟、骨組み</p>
             </a>
           </li>
           <li class="top-flow__arrow"></li>
           <li>
-            <a href="#" class="top-flow__item">
+            <a href="<?php echo FLOW_URL; ?>#interior-exterior-work" class="top-flow__item">
               <span class="top-flow__number">6</span>
               <p class="top-flow__text">施主による建築</p>
             </a>
           </li>
           <li>
-            <a href="#" class="top-flow__item top-flow__item--second">
+            <a href="<?php echo FLOW_URL; ?>#interior-exterior-work" class="top-flow__item top-flow__item--second">
               <span class="top-flow__number">6</span>
               <p class="top-flow__text">工務店による建築</p>
             </a>
           </li>
           <li class="top-flow__arrow"></li>
           <li>
-            <a href="#" class="top-flow__item">
+            <a href="<?php echo FLOW_URL; ?>#final-finishing-delivery" class="top-flow__item">
               <span class="top-flow__number">7</span>
               <p class="top-flow__text">設備仕上げ、引き渡し</p>
             </a>
@@ -369,7 +369,7 @@ Template Name: トップページ
     <div class="top-links__inner">
       <ul class="top-links__list">
         <li class="top-links__item top-links__item--01 js-fade-up">
-          <a href="#" class="top-links__link">
+          <a href="<?php echo VOICE_URL; ?>" class="top-links__link">
             <div class="top-links__img-wrap">
               <img src="<?php echo IMAGEPATH; ?>/top/top-links01.webp" alt="家の模型と吹き出しで表現したお客様の声のイメージ" width="360" height="480" loading="lazy" class="top-links__img">
             </div>
@@ -378,7 +378,7 @@ Template Name: トップページ
         </li>
 
         <li class="top-links__item top-links__item--02 js-fade-up --delay-1">
-          <a href="#" class="top-links__link">
+          <a href="<?php echo COLUMN_URL; ?>" class="top-links__link">
             <div class="top-links__img-wrap">
               <img src="<?php echo IMAGEPATH; ?>/top/top-links02.webp" alt="設計図とペンが並ぶ住宅コラムのイメージ" width="360" height="480" loading="lazy" class="top-links__img">
             </div>
@@ -387,7 +387,7 @@ Template Name: トップページ
         </li>
 
         <li class="top-links__item top-links__item--03 js-fade-up --delay-2">
-          <a href="#" class="top-links__link">
+          <a href="<?php echo COMPANY_URL; ?>" class="top-links__link">
             <div class="top-links__img-wrap">
               <img src="<?php echo IMAGEPATH; ?>/top/top-links03.webp" alt="施工途中の室内空間を写した会社概要のイメージ" width="360" height="480" loading="lazy" class="top-links__img">
             </div>

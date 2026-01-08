@@ -30,7 +30,7 @@ Template Name: ハーフビルドの流れ
       <h1 class="flow__title">ハーフビルドの流れ</h1>
 
       <ol class="flow__list">
-        <li class="flow__item flow__item--01">
+        <li id="consultation-planning" class="flow__item flow__item--01">
           <div class="flow__item-img-wrap js-scaleImg">
             <img src="<?php echo IMAGEPATH; ?>/flow/flow01.webp" alt="家づくりの相談とプランニングを行う様子" width="564" height="376" loading="lazy" class="flow__item-img">
           </div>
@@ -45,7 +45,7 @@ Template Name: ハーフビルドの流れ
           </div>
         </li>
 
-        <li class="flow__item flow__item--02">
+        <li id="design-structure" class="flow__item flow__item--02">
           <div class="flow__item-img-wrap js-scaleImg">
             <img src="<?php echo IMAGEPATH; ?>/flow/flow02.webp" alt="設計と構造計画を進めた住宅の完成イメージ" width="564" height="376" loading="lazy" class="flow__item-img">
           </div>
@@ -57,7 +57,7 @@ Template Name: ハーフビルドの流れ
           </div>
         </li>
 
-        <li class="flow__item flow__item--03">
+        <li id="foundation-work" class="flow__item flow__item--03">
           <div class="flow__item-img-wrap js-scaleImg">
             <img src="<?php echo IMAGEPATH; ?>/flow/flow03.webp" alt="基礎工事を行っている建築現場の様子" width="564" height="376" loading="lazy" class="flow__item-img">
           </div>
@@ -69,7 +69,7 @@ Template Name: ハーフビルドの流れ
           </div>
         </li>
 
-        <li class="flow__item flow__item--04">
+        <li id="material-preparation" class="flow__item flow__item--04">
           <div class="flow__item-img-wrap js-scaleImg">
             <img src="<?php echo IMAGEPATH; ?>/flow/flow04.webp" alt="建築用木材が現場に搬入されている様子" width="564" height="376" loading="lazy" class="flow__item-img">
           </div>
@@ -81,7 +81,7 @@ Template Name: ハーフビルドの流れ
           </div>
         </li>
 
-        <li class="flow__item flow__item--05">
+        <li id="framing" class="flow__item flow__item--05">
           <div class="flow__item-img-wrap js-scaleImg">
             <img src="<?php echo IMAGEPATH; ?>/flow/flow05.webp" alt="住宅の上棟と骨組み工事の様子" width="564" height="376" loading="lazy" class="flow__item-img">
           </div>
@@ -93,7 +93,7 @@ Template Name: ハーフビルドの流れ
           </div>
         </li>
 
-        <li class="flow__item flow__item--06">
+        <li id="interior-exterior-work" class="flow__item flow__item--06">
           <div class="flow__item-img-wrap js-scaleImg">
             <img src="<?php echo IMAGEPATH; ?>/flow/flow06.webp" alt="フローリング張りなど内装作業を行う様子" width="564" height="376" loading="lazy" class="flow__item-img">
           </div>
@@ -115,7 +115,7 @@ Template Name: ハーフビルドの流れ
           </div>
         </li>
 
-        <li class="flow__item flow__item--07">
+        <li id="final-finishing-delivery" class="flow__item flow__item--07">
           <div class="flow__item-img-wrap js-scaleImg">
             <img src="<?php echo IMAGEPATH; ?>/flow/flow07.webp" alt="完成した住宅の階段と手すりの様子" width="564" height="376" loading="lazy" class="flow__item-img">
           </div>

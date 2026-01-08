@@ -13,6 +13,7 @@ define('MATERIALS_SELECT_URL', esc_url(home_url('/materials-select/')));        
 define('SCHEDULE_COST_URL',    esc_url(home_url('/schedule-cost/')));            // 工期・費用
 define('FLOW_URL',             esc_url(home_url('/flow/')));                     // ハーフビルドの流れ
 define('MATERIALS_URL',        esc_url(home_url('/materials/')));                // 使用する材料
+define('YATSUGATAKE_URL',      esc_url(home_url('/yatsugatake/')));              // 八ヶ岳の魅力
 define('WORKS_URL',            esc_url(home_url('/works/')));                    // 施工事例：一覧
 define('COLUMN_URL',           esc_url(home_url('/column/')));                   // コラム：一覧
 define('VOICE_URL',            esc_url(home_url('/voice/')));                    // お客様の声
