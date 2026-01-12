@@ -1,0 +1,10 @@
+@use "global"as *;
+
+.post-label {
+  font-size: rem(16);
+  font-weight: var(--font-weight-medium);
+  transition: color .3s;
+  @include mq('md') {
+    font-size: rem(20);
+  }
+}

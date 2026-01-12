@@ -41,3 +41,20 @@ add_filter('rest_endpoints', function ($endpoints) {
     }
     return $endpoints;
 });
+
+// ==========================================================================
+// お問い合わせ本文（textarea）が全文日本語以外だった場合はエラー
+// ==========================================================================
+function wpcf7_validation_textarea_hiragana($result, $tag){
+	$name = $tag['name'];
+	// セキュリティ: $_POSTデータをサニタイズして取得
+	$value = (isset($_POST[$name])) ? sanitize_textarea_field(wp_unslash($_POST[$name])) : '';
+
+	if ($value !== '' && !preg_match('/[ぁ-ん]/u', $value)) {
+		$result['valid'] = false;
+		$result['reason'] = array($name => 'エラー / この内容は送信できません。');
+	}
+	return $result;
+}
+add_filter('wpcf7_validate_textarea', 'wpcf7_validation_textarea_hiragana', 10, 2);
+add_filter('wpcf7_validate_textarea*', 'wpcf7_validation_textarea_hiragana', 10, 2);

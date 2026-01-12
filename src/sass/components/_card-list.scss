@@ -1,0 +1,64 @@
+@use "global" as *;
+
+.card-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: rem(40);
+
+  @include mq('md') {
+    grid-template-columns: repeat(3, 1fr);
+    gap: rem(80);
+  }
+}
+
+.card-list__link {
+  display: block;
+  @media (any-hover: hover) {
+    &:hover {
+      .card-list__img {
+        transform: scale(1.05);
+      }
+    }
+  }
+}
+
+.card-list__img-wrap {
+  overflow: hidden;
+}
+
+.card-list__img {
+  height: auto;
+  object-fit: cover;
+  aspect-ratio: 390 / 293;
+  transition: transform var(--duration-base) ease;
+  will-change: transform;
+}
+
+.card-list__body {
+  margin-top: rem(6);
+}
+
+.card-list__title {
+  font-family: var(--font-family-second);
+  font-weight: var(--font-weight-semibold);
+  font-size: rem(18);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  @include mq('md') {
+    font-size: rem(26);
+  }
+}
+
+.card-list__date {
+  display: block;
+  margin-top: rem(5);
+  font-family: var(--font-family-second);
+  font-weight: var(--font-weight-medium);
+  font-size: rem(14);
+
+  @include mq('md') {
+    font-size: rem(16);
+  }
+}

@@ -46,12 +46,14 @@ if (!is_home() && !is_front_page()) :
       // カスタム投稿タイプ
       elseif (is_singular() && get_post_type() !== 'post') :
         $post_type = get_post_type_object(get_post_type());
+        if ($post_type && isset($post_type->label) && isset($post_type->name)) :
         ?>
         <li class="breadcrumb__item">
           <a href="<?php echo esc_url(get_post_type_archive_link($post_type->name)); ?>" class="breadcrumb__link">
             <?php echo esc_html($post_type->label); ?>
           </a>
         </li>
+        <?php endif; ?>
 
         <?php
         // カスタムタクソノミーがある場合（例：genre）
@@ -76,11 +78,24 @@ if (!is_home() && !is_front_page()) :
       <?php
       // カスタム投稿タイプのアーカイブページ
       elseif (is_post_type_archive()) :
-        $post_type = get_post_type_object(get_post_type());
+        $post_type_name = get_query_var('post_type');
+        if (empty($post_type_name)) {
+          $queried_object = get_queried_object();
+          if ($queried_object && isset($queried_object->name)) {
+            $post_type_name = $queried_object->name;
+          }
+        }
+        if ($post_type_name) {
+          $post_type = get_post_type_object($post_type_name);
+          if ($post_type && isset($post_type->label)) :
       ?>
         <li class="breadcrumb__item">
           <?php echo esc_html($post_type->label); ?>
         </li>
+      <?php 
+          endif;
+        }
+      ?>
 
       <?php
       // カテゴリーアーカイブ
@@ -92,8 +107,10 @@ if (!is_home() && !is_front_page()) :
       // カスタム分類アーカイブ
       elseif (is_tax()) :
         $term = get_queried_object();
+        if ($term && isset($term->name)) :
       ?>
         <li class="breadcrumb__item"><?php echo esc_html($term->name); ?></li>
+      <?php endif; ?>
       <?php
       // 404ページ
       elseif (is_404()) :

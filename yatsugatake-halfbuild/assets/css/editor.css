@@ -1,0 +1,75 @@
+.editor-styles-wrapper h2 {
+  margin-top: 15px;
+  font-size: 32px;
+}
+
+.editor-styles-wrapper h3 {
+  margin-top: 15px;
+  font-size: 28px;
+}
+
+.editor-styles-wrapper h4 {
+  margin-top: 15px;
+  font-size: 24px;
+}
+
+.editor-styles-wrapper h5 {
+  margin-top: 15px;
+  font-size: 22px;
+}
+
+.post-type-works.editor-styles-wrapper p {
+  font-size: 20px;
+  margin-top: 15px;
+}
+
+.editor-styles-wrapper p {
+  font-size: 24px;
+  margin-top: 15px;
+}
+
+.editor-styles-wrapper a {
+  color: #0000ee;
+  text-decoration: underline currentColor;
+  transition: opacity .3s ease-in-out;
+  font-size: 24px;
+}
+
+.editor-styles-wrapper ul {
+  padding-left: 30px;
+}
+
+.editor-styles-wrapper ul li {
+  font-size: 24px;
+}
+
+.editor-styles-wrapper ol {
+  padding-left: 30px;
+}
+
+.editor-styles-wrapper ol li {
+  font-size: 24px;
+}
+
+.editor-styles-wrapper .voice-block:not(:first-of-type) {
+  margin-top: 80px;
+}
+
+.editor-styles-wrapper .voice-block p {
+  font-size: 20px;
+}
+
+.editor-styles-wrapper p.meta {
+  font-size: 18px;
+  font-family: "Noto Sans JP", sans-serif;
+  border: 1px solid #000;
+  margin-inline: auto 0 !important;
+  padding: 2px 30px;
+  width: fit-content;
+}
+
+.editor-styles-wrapper .border {
+  width: 80%;
+  margin-top: 30px;
+  border-top: 1px solid;
+}

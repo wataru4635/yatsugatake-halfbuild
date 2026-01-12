@@ -1,0 +1,22 @@
+@use "global" as *;
+
+.page-title {
+  width: fit-content;
+  margin-inline: auto;
+  font-size: rem(22);
+  font-family: var(--font-family-second);
+  font-weight: var(--font-weight-semibold);
+  padding: rem(6) rem(30) rem(7) rem(30);
+  border: 1px solid var(--black);
+  @include mq('md') {
+    font-size: rem(40);
+    padding: rem(10) rem(80) rem(11) rem(80);
+  }
+}
+
+.page-title.page-title--small {
+ padding: rem(6) rem(15) rem(7) rem(15);
+ @include mq('md') {
+  padding: rem(10) rem(30) rem(11) rem(30);
+ }
+}

@@ -18,13 +18,12 @@
 
   <header class="header">
     <div class="header__inner">
-    <a href="<?php echo HOME_URL; ?>" class="header__logo-link">
+      <a href="<?php echo HOME_URL; ?>" class="header__logo-link">
         <?php
           $logo_tag = (is_front_page() || is_home()) ? 'h1' : 'div';
         ?>
         <<?php echo esc_attr($logo_tag); ?> class="header__logo">
-          <img src="<?php echo IMAGEPATH; ?>/common/logo.webp" alt="" class="header__logo-img" width="233"
-            height="87">
+          <img src="<?php echo IMAGEPATH; ?>/common/logo.webp" alt="ハケ岳ハーフビルドのロゴマーク" class="header__logo-img" width="233" height="87">
         </<?php echo esc_attr($logo_tag); ?>>
       </a>
       <div class="header__menu-btn-wrap">

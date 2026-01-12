@@ -7,19 +7,18 @@ Template Name: 工期・費用
 
 <main>
 
-  <?php if (has_post_thumbnail()) : ?>
-  <?php
-    $thumbnail_id = get_post_thumbnail_id();
-    $alt_text = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
-    if (empty($alt_text)) {
-      $alt_text = get_the_title() . '画像';
-    }
-  ?>
   <section class="sub-mv sub-mv--relative">
-    <?php echo get_the_post_thumbnail(get_the_ID(), 'full', array('class' => 'sub-mv__img', 'alt' => esc_attr($alt_text))); ?>
+    <?php
+    // アイキャッチ画像の取得（共通関数を使用）
+    $thumbnail_data = get_thumbnail_image_with_fallback('full', 'common/dummy-mv.webp', array(
+      'width' => '1444',
+      'height' => '854',
+      'class' => 'sub-mv__img'
+    ));
+    echo wp_kses_post($thumbnail_data['html']);
+    ?>
     <h1 class="sub-mv__title">工期・費用</h1>
   </section>
-  <?php endif; ?>
 
 
   <section class="breadcrumb">
@@ -108,7 +107,7 @@ Template Name: 工期・費用
       </div>
     </div>
   </section>
-  
+
   <section class="cost">
     <div class="cost__inner">
       <h2 class="cost__title">価格について</h2>

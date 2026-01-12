@@ -1,0 +1,125 @@
+@use "global" as *;
+
+.company {
+  margin-top: rem(40);
+  padding-bottom: rem(100);
+  @include mq('md') {
+    margin-top: rem(100);
+    padding-bottom: rem(180);
+  }
+}
+
+.company__inner {
+  max-width: 500px;
+  margin-inline: auto;
+  padding-inline: var(--padding-inner);
+  @include mq('md') {
+    max-width: calc(rem(1300) + var(--padding-inner) * 2);
+  }
+}
+
+.company__profile {
+  margin-top: rem(40);
+  @include mq('md') {
+    margin-top: rem(100);
+    padding-inline: rem(100);
+  }
+}
+
+.company-profile__list {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding-block: rem(15);
+  padding-inline: rem(10);
+  border-bottom: 1px solid var(--black);
+  @media (max-width: 767px) {
+  gap: rem(5);
+  }
+  @include mq(md){
+    grid-template-columns: rem(250) 1fr;
+      padding-block: rem(20);
+  }
+}
+
+.company-profile__list:first-of-type {
+  border-top: 1px solid var(--black);
+}
+
+
+.company-profile__term {
+  font-size: rem(16);
+  font-weight: var(--font-weight-bold);
+  font-family: var(--font-family-second);
+  @include mq(md){
+    font-size: rem(20);
+  }
+}
+
+.company-profile__description {
+  font-size: rem(16);
+  font-weight: var(--font-weight-medium);
+  font-family: var(--font-family-second);
+  @include mq(md){
+    font-size: rem(20);
+  }
+}
+
+.company__address {
+  display: grid;
+
+margin-top: rem(80);
+@include mq(md){
+  margin-top: rem(160);
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: rem(60);
+}
+}
+
+.company__img {
+height: auto;
+}
+
+.company__address-item {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: rem(40);
+  @media (max-width: 767px) {
+  margin-top: rem(20);
+  }
+}
+
+.company__address-title {
+  font-family: var(--font-family-second);
+  font-size: rem(16);
+  font-weight: var(--font-weight-bold);
+  @include mq(md){
+    font-size: rem(24);
+  }
+}
+
+.company__address-text {
+  font-family: var(--font-family-second);
+  font-size: rem(16);
+  font-weight: var(--font-weight-medium);
+  @include mq(md){
+    font-size: rem(24);
+  }
+}
+
+.company__address-access {
+  margin-top: rem(40);
+
+}
+
+.company__address-map {
+margin-top: rem(20);
+@include mq('md') {
+  padding-left: rem(40);
+  }
+& iframe {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 600 / 350;
+}
+}
+

@@ -86,7 +86,7 @@ Template Name: トップページ
           <div class="top-about__box-img-wrap">
             <picture>
               <source srcset="<?php echo IMAGEPATH; ?>/top/top-about.webp" media="(max-width: 767px)" type="image/webp">
-              <img src="<?php echo IMAGEPATH; ?>/top/top-about.webp" alt="" width="964" height="643" class="top-about__box-img">
+              <img src="<?php echo IMAGEPATH; ?>/top/top-about.webp" alt="室内で二人が脚立を使い、壁を塗装している様子" width="964" height="643" class="top-about__box-img">
             </picture>
           </div>
           <div class="top-about__box-content">
@@ -257,40 +257,76 @@ Template Name: トップページ
     <div class="top-works__inner">
       <h2 class="top-works__title js-fade-in">施工事例</h2>
 
-      <ul class="top-works__list">
-        <li class="top-works__item js-slide-left">
-          <a href="<?php echo WORKS_URL; ?>" class="top-works__link">
-            <div class="top-works__img-wrap">
-              <img src="<?php echo IMAGEPATH; ?>/top/top-works01.webp" alt="モダンな外観の戸建て住宅の施工事例" width="300" height="200" loading="lazy" class="top-works__img">
-            </div>
-          </a>
-        </li>
-        <li class="top-works__item js-slide-left --delay-1">
-          <a href="<?php echo WORKS_URL; ?>" class="top-works__link">
-            <div class="top-works__img-wrap">
-              <img src="<?php echo IMAGEPATH; ?>/top/top-works02.webp" alt="ナチュラルデザインの住宅外観の施工事例" width="300" height="200" loading="lazy" class="top-works__img">
-            </div>
-          </a>
-        </li>
-        <li class="top-works__item js-slide-left --delay-2">
-          <a href="<?php echo WORKS_URL; ?>" class="top-works__link">
-            <div class="top-works__img-wrap">
-              <img src="<?php echo IMAGEPATH; ?>/top/top-works03.webp" alt="ガラス張りの現代的な住宅の施工事例" width="300" height="200" loading="lazy" class="top-works__img">
-            </div>
-          </a>
-        </li>
-        <li class="top-works__item js-slide-left --delay-3">
-          <a href="<?php echo WORKS_URL; ?>" class="top-works__link">
-            <div class="top-works__img-wrap">
-              <img src="<?php echo IMAGEPATH; ?>/top/top-works04.webp" alt="建築現場で図面を確認する施工管理の様子" width="300" height="200" loading="lazy" class="top-works__img">
-            </div>
-          </a>
-        </li>
-      </ul>
+      <?php
+      // 施工事例のサブループ（最新4件を取得）
+      $works_args = array(
+        'post_type' => 'works',
+        'posts_per_page' => 4,
+        'orderby' => 'date',
+        'order' => 'DESC',
+      );
+      $works_query = new WP_Query($works_args);
+      ?>
 
-      <div class="top-works__button-wrap">
-        <a href="<?php echo WORKS_URL; ?>" class="top-works__btn btn-link">詳しく見る</a>
-      </div>
+      <?php if ($works_query->have_posts()) : ?>
+        <ul class="top-works__list">
+          <?php
+          $delay_class_index = 0;
+          while ($works_query->have_posts()) : $works_query->the_post();
+            $delay_class = '';
+            if ($delay_class_index > 0) {
+              $delay_class = ' --delay-' . $delay_class_index;
+            }
+          ?>
+            <li class="top-works__item js-slide-left<?php echo esc_attr($delay_class); ?>">
+              <a href="<?php the_permalink(); ?>" class="top-works__link">
+                <div class="top-works__img-wrap">
+                  <?php
+                  // ACFで設定した1枚目の画像を取得
+                  $works_image_1 = get_field('works_image_1');
+                  if ($works_image_1) {
+                    if (is_array($works_image_1)) {
+                      $image_url = $works_image_1['url'] ?? $works_image_1['sizes']['medium'] ?? '';
+                      $image_alt = !empty($works_image_1['alt']) ? $works_image_1['alt'] : 'サムネイル画像1';
+                    } else {
+                      $image_url = $works_image_1;
+                      $attachment_id = attachment_url_to_postid($image_url);
+                      if ($attachment_id) {
+                        $image_alt = get_post_meta($attachment_id, '_wp_attachment_image_alt', true);
+                        if (empty($image_alt)) {
+                          $image_alt = 'サムネイル画像1';
+                        }
+                      } else {
+                        $image_alt = 'サムネイル画像1';
+                      }
+                    }
+                    if ($image_url) {
+                      echo '<img src="' . esc_url($image_url) . '" alt="' . esc_attr($image_alt) . '" width="300" height="200" loading="lazy" class="top-works__img">';
+                    } else {
+                      // 画像がない場合はデフォルト画像
+                      echo '<img src="' . esc_url(IMAGEPATH . '/common/dummy01.webp') . '" alt="' . esc_attr(get_the_title()) . '" width="300" height="200" loading="lazy" class="top-works__img">';
+                    }
+                  } else {
+                    // ACF画像がない場合はデフォルト画像
+                    echo '<img src="' . esc_url(IMAGEPATH . '/common/dummy01.webp') . '" alt="' . esc_attr(get_the_title()) . '" width="300" height="200" loading="lazy" class="top-works__img">';
+                  }
+                  ?>
+                </div>
+              </a>
+            </li>
+          <?php
+            $delay_class_index++;
+          endwhile;
+          wp_reset_postdata();
+          ?>
+        </ul>
+
+        <div class="top-works__button-wrap">
+          <a href="<?php echo WORKS_URL; ?>" class="top-works__btn btn-link">詳しく見る</a>
+        </div>
+      <?php else : ?>
+        <p style="text-align: center; font-size: 20px; font-weight: 600; margin-top: 30px;">現在、施工事例はありません</p>
+      <?php endif; ?>
     </div>
   </section>
 
