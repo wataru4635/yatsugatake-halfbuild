@@ -47,7 +47,7 @@ Template Name: トップページ
           <img src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($image_alt); ?>" class="mv__img" width="1098" height="729" loading="eager">
           <p class="mv__text-wrap">
             <span class="mv__text-wrap-item">全部をプロに任せずに、</span>
-            <span class="mv__text-wrap-item">自分も家づくりに参加する</span>
+            <span class="mv__text-wrap-item">施主様も参加する家づくり</span>
           </p>
         </div>
         <?php
@@ -65,7 +65,7 @@ Template Name: トップページ
           <img src="<?php echo IMAGEPATH; ?>/top/<?php echo esc_attr($image); ?>" alt="MV画像" class="mv__img" width="1098" height="729" loading="eager">
           <p class="mv__text-wrap">
             <span class="mv__text-wrap-item">全部をプロに任せずに、</span>
-            <span class="mv__text-wrap-item">自分も家づくりに参加する</span>
+            <span class="mv__text-wrap-item">施主様も参加する家づくり</span>
           </p>
         </div>
         <?php
@@ -94,12 +94,10 @@ Template Name: トップページ
               建築士が設計をし、<br>
               工務店が地盤調査、基礎、上棟、構造、屋根、水道を担当。
             </p>
-            <p class="top-about__box-text">
-              専門性や資格が必要な部分はプロに、内装、塗装、床張り、家具作りなどは「ご自身」で
-            </p>
-            <p class="top-about__box-text">
-              自分の家が形になる過程に立ち会い、<br class="u-desktop">作る喜びを味わえる家づくり
-            </p>
+            <p class="top-about__box-text">専門性や資格が必要な部分はプロに、内装、塗装、床張り、家具作りなどは「ご自身」で。
+                         </p>
+            <p class="top-about__box-text">自分の家が形になる過程に立ち会い、<br class="u-desktop">作る喜びを味わえる家づくり。
+                         </p>
           </div>
         </div>
       </div>
@@ -197,11 +195,9 @@ Template Name: トップページ
                 <p class="top-service__card-text">
                   その土地の個性や風景を生かして、家族とともに自分たちで家をつくる、育てる。そんな時間は、人間らしい贅沢な暮らし。手をかけた分だけ愛情が深まり、そのあとに長く続く暮らしも特別なものになります。
                 </p>
-                <p class="top-service__card-text">
-                  「好きな場所に、好きな家を、好きな人と」を自分の手で形にする。そんなお手伝いが出来れば嬉しいが限りです。
+                <p class="top-service__card-text">「好きな場所に、好きな家を、好きな人と」を自分の手で形にする。そんなお手伝いを私たちができたら嬉しいです。
                 </p>
-                <p class="top-service__card-text">
-                  ここや八ヶ岳南麓は県外からの移住者も多く人気な土地です。
+                <p class="top-service__card-text">八ヶ岳南麓は県外からの移住者も多く人気な土地です。
                 </p>
                 <div class="top-service__card-action">
                   <a class="top-service__card-link" href="<?php echo YATSUGATAKE_URL; ?>">八ヶ岳の魅力</a>
@@ -236,17 +232,14 @@ Template Name: トップページ
       <div class="top-support__content top-support__content--second">
         <div class="top-support__media">
           <div class="top-support__img-wrap js-scaleImg --delay-1">
-            <img src="<?php echo IMAGEPATH; ?>/top/top-support.webp" alt="壁に塗装を施す男女のDIY作業風景" width="600" height="400" loading="lazy" class="top-support__img">
+            <img src="<?php echo IMAGEPATH; ?>/top/top-support02.webp" alt="ログハウスの室内、丸太壁とソファ、テーブルのある温かみのある空間" width="600" height="400" loading="lazy" class="top-support__img">
           </div>
           <p class="top-support__vertical-title js-fade-in"><span class="top-support__vertical-title-first">セルフビルドなら</span><br><span class="top-support__vertical-title-second">ログハウスがおすすめ</span></p>
         </div>
 
         <div class="top-support__text-wrap js-fade-in">
-          <p class="top-support__text">
-            ハーフビルドとログハウスは親和性がたかい
-          </p>
-          <p class="top-support__text">
-            丸太を組めば外壁と内壁ができてしまう、あとはサッシをいれれば、あとは施主さんがゆかかってキッチンいれて、でできてしまう<br>だからやりやすいのがログハウス
+          <p class="top-support__text">ハーフビルドとログハウスは親和性が高いと言えます。</p>
+          <p class="top-support__text">丸太を組めば外壁と内壁ができてしまい、あとはサッシを入れれば施主様が床を張って、キッチンを入れれば完成してしまいます。<br>だから、ハーフビルドで家づくりを行うときに、ログハウスは選択肢の一つです。
           </p>
         </div>
       </div>
@@ -269,8 +262,8 @@ Template Name: トップページ
       ?>
 
       <?php if ($works_query->have_posts()) : ?>
-        <ul class="top-works__list">
-          <?php
+      <ul class="top-works__list">
+        <?php
           $delay_class_index = 0;
           while ($works_query->have_posts()) : $works_query->the_post();
             $delay_class = '';
@@ -278,10 +271,10 @@ Template Name: トップページ
               $delay_class = ' --delay-' . $delay_class_index;
             }
           ?>
-            <li class="top-works__item js-slide-left<?php echo esc_attr($delay_class); ?>">
-              <a href="<?php the_permalink(); ?>" class="top-works__link">
-                <div class="top-works__img-wrap">
-                  <?php
+        <li class="top-works__item js-slide-left<?php echo esc_attr($delay_class); ?>">
+          <a href="<?php the_permalink(); ?>" class="top-works__link">
+            <div class="top-works__img-wrap">
+              <?php
                   // ACFで設定した1枚目の画像を取得
                   $works_image_1 = get_field('works_image_1');
                   if ($works_image_1) {
@@ -311,21 +304,21 @@ Template Name: トップページ
                     echo '<img src="' . esc_url(IMAGEPATH . '/common/dummy01.webp') . '" alt="' . esc_attr(get_the_title()) . '" width="300" height="200" loading="lazy" class="top-works__img">';
                   }
                   ?>
-                </div>
-              </a>
-            </li>
-          <?php
+            </div>
+          </a>
+        </li>
+        <?php
             $delay_class_index++;
           endwhile;
           wp_reset_postdata();
           ?>
-        </ul>
+      </ul>
 
-        <div class="top-works__button-wrap">
-          <a href="<?php echo WORKS_URL; ?>" class="top-works__btn btn-link">詳しく見る</a>
-        </div>
+      <div class="top-works__button-wrap">
+        <a href="<?php echo WORKS_URL; ?>" class="top-works__btn btn-link">詳しく見る</a>
+      </div>
       <?php else : ?>
-        <p style="text-align: center; font-size: 20px; font-weight: 600; margin-top: 30px;">現在、施工事例はありません</p>
+      <p style="text-align: center; font-size: 20px; font-weight: 600; margin-top: 30px;">現在、施工事例はありません</p>
       <?php endif; ?>
     </div>
   </section>

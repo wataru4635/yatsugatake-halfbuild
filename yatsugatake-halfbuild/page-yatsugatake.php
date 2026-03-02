@@ -24,7 +24,9 @@ Template Name: 八ヶ岳の魅力
   </section>
 
   <section class="yatsugatake">
-    <?php the_content(); ?>
+    <div class="yatsugatake__inner">
+      <?php the_content(); ?>
+    </div>
   </section>
 
 </main>

@@ -1,8 +1,88 @@
 @use "global" as *;
 
 .yatsugatake {
+margin-top: rem(40);
 padding-bottom: rem(60);
 @include mq('md') {
+  margin-top: rem(100);
   padding-bottom: rem(160);
 }
 }
+
+.yatsugatake__inner {
+margin-inline: auto;
+max-width: 500px;
+padding-inline: var(--padding-inner);
+@include mq('md') {
+  max-width: calc(1230px + var(--padding-inner) * 2);
+}
+}
+
+.yatsugatake__img-wrap {
+  margin-top: rem(40);
+  @include mq('md') {
+  width: rem(700);
+  }
+}
+
+.yatsugatake__img {
+  height: auto;
+  width: 100%;
+  object-fit: cover;
+}
+
+.yatsugatake__title {
+  text-align: center;
+  font-size: rem(20);
+  font-weight: var(--font-weight-medium);
+  @include mq('md') {
+    font-size: rem(32);
+  }
+}
+
+.yatsugatake__content {
+  margin-top: rem(40);
+  display: flex;
+  flex-direction: column;
+  gap: rem(48);
+  @include mq('md') {
+    margin-top: rem(100);
+    gap: rem(72);
+  }
+}
+
+.yatsugatake__block {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.yatsugatake__heading {
+  font-size: rem(18);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.6;
+  @include mq('md') {
+    font-size: rem(26);
+  }
+}
+
+.yatsugatake__body {
+  margin-top: rem(16);
+  display: flex;
+  flex-direction: column;
+  gap: rem(16);
+  @include mq('md') {
+    margin-top: rem(24);
+    gap: rem(24);
+  }
+}
+
+.yatsugatake__text {
+  font-size: rem(16);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.8;
+  @include mq('md') {
+    font-size: rem(22);
+  }
+}
+

@@ -30,5 +30,8 @@
 }
 
 .sub-mv__img.sub-mv--small {
-aspect-ratio: 1444/465;
+aspect-ratio: 1444/565;
+@include mq('md') {
+  aspect-ratio: 1444/465;
+}
 }

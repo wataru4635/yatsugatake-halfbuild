@@ -37,10 +37,10 @@
   margin-top: rem(60);
   display: flex;
   flex-direction: column;
-  gap: rem(70);
+  gap: rem(140);
   @include mq('md') {
     margin-top: rem(180);
-    gap: rem(120);
+    gap: rem(240);
   }
 }
 
